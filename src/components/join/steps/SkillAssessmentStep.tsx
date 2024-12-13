@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 interface SkillAssessmentStepProps {
   onNext: (data: {
     yearsOfExperience: string;
+    skillLevel: string; // Keep this for potential future use
     certifications: string[];
   }) => void;
   onBack: () => void;
@@ -16,10 +17,11 @@ export function SkillAssessmentStep({
 }: SkillAssessmentStepProps) {
   const [formData, setFormData] = useState({
     yearsOfExperience: '',
+    skillLevel: '', // Keep this but not actively used
     certifications: [] as string[]
   });
 
-  // Update isValid logic
+  // Adjust isValid logic to exclude skillLevel
   const isValid = formData.yearsOfExperience;
 
   return (
@@ -42,6 +44,28 @@ export function SkillAssessmentStep({
           <option value="10+">10+ years</option>
         </select>
       </div>
+
+      {/* Comment out Skill Level section */}
+      {/*
+      <div>
+        <label className="block text-sm font-medium text-black mb-2">
+          Skill Level
+        </label>
+        <select
+          value={formData.skillLevel}
+          onChange={(e) =>
+            setFormData(prev => ({ ...prev, skillLevel: e.target.value }))
+          }
+          className="w-full p-3 rounded-lg border border-black/20 focus:ring-2 focus:ring-mint focus:border-transparent"
+        >
+          <option value="">Select level</option>
+          <option value="junior">Junior</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="senior">Senior</option>
+          <option value="expert">Expert</option>
+        </select>
+      </div>
+      */}
 
       <div className="flex gap-4">
         <button
