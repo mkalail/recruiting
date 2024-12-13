@@ -25,9 +25,9 @@ export function Hero() {
               Join Our Network
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
-            <button className="border border-black/20 text-black px-8 py-3 rounded-lg hover:bg-black/5 transition-colors">
+            {/* <button className="border border-black/20 text-black px-8 py-3 rounded-lg hover:bg-black/5 transition-colors">
               Browse Candidates
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
